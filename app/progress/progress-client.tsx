@@ -155,8 +155,7 @@ export function ProgressClient({
                 contentStyle={{ background: "#262533", border: "1px solid #332f45", borderRadius: 8, fontSize: 12 }}
                 labelStyle={{ color: "#9d99ac" }}
                 itemStyle={{ color: "#f0eef6" }}
-                formatter={(val: number) => [`${val} ${units}`, "Weight"]}
-              />
+                formatter={(val: unknown) => [`${val} ${units}`, "Weight"]}              />
               <Line
                 type="monotone"
                 dataKey="weight"
