@@ -5,10 +5,10 @@ export function createClient() {
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!,
     {
-      auth: {
-        persistSession: true,
-        storageKey: "teenfit-auth",
-        storage: typeof window !== "undefined" ? window.localStorage : undefined,
+      cookieOptions: {
+        maxAge: 60 * 60 * 24 * 365, // 1 year
+        sameSite: "lax",
+        secure: true,
       },
     }
   );
